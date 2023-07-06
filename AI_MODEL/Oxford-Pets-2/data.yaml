@@ -1,0 +1,13 @@
+names:
+- cat
+- dog
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: oxford-pets
+  url: https://universe.roboflow.com/brad-dwyer/oxford-pets/dataset/2
+  version: 2
+  workspace: brad-dwyer
+test: test/images
+train: train/images
+val: valid/images
