@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  name: webapp
-spec: 
-  replicas: 2
-  selector: 
-    matchLabels: 
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
       app: webapp
-  template: 
-    metadata: 
-      labels: 
+  template:
+    metadata:
+      labels:
         app: webapp
-    spec: 
-      containers: 
-      - name: webapp 
-        image: binitbambhroliya/webapp:v1
-        ports: 
-        - containerPort: 8080
-      
-
+    spec:
+      containers:
+      - name: webapp
+        image: binitbambhroliya/webapp:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
