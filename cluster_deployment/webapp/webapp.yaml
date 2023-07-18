@@ -14,7 +14,7 @@ spec:
     spec: 
       containers: 
       - name: webapp 
-        image: kubeguide/tomcat-app:v1
+        image: binitbambhroliya/webapp:v1
         ports: 
         - containerPort: 8080
       
