@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: binitbambhroliya/webappimage:latest
+        image: binitbambhroliya/webapp:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
