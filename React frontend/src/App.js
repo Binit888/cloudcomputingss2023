@@ -2,13 +2,14 @@ import './pages/styles.css'; // Import the CSS file
 
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
+import Initial from './pages/initial';
+import Main from './pages/main';
+import Oai from './pages/oai';
 import Play from './pages/play';
 import React from 'react';
 import Test from './pages/test';
 import Train from './pages/train';
 import Valid from './pages/valid';
-import Initial from './pages/initial';
-import Main from './pages/main';
 
 const App = () => {
   return (
@@ -27,6 +28,9 @@ const App = () => {
               <Link to="/test">Test</Link>
             </li>
             <li>
+              <Link to="/oai">Our AI</Link>
+            </li>
+            <li>
               <Link to="/play">Play ground</Link>
             </li>
             <li>
@@ -40,6 +44,7 @@ const App = () => {
           <Route path="/valid" element={<Valid/>} />
           <Route path="/test" element={<Test/>} />
           <Route path="/play" element={<Play/>} />
+          <Route path="/oai" element={<Oai/>} />
           <Route path="/initial" element={<Initial/>} />
           <Route path="/" element={<Main/>} />
         </Routes>
