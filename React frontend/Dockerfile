@@ -1,17 +1,15 @@
-FROM node:10-alpine
+FROM node:lts-alpine
 
-RUN mkdir -p /usr/src/app/node_modules && chown -R node:node /usr/src/app
+WORKDIR /usr/app
 
-WORKDIR /usr/src/app
+COPY package*.json /
 
-COPY package*.json ./
+RUN npm i
 
-USER node
+COPY . .
 
-RUN npm install
+RUN npm run build
 
-COPY --chown=node:node . .
+EXPOSE 3000
 
-EXPOSE 8080
-
-CMD [ "node", "./App.js" ]
+CMD ["npm", "start"]
